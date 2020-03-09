@@ -1,0 +1,38 @@
+
+
+        <!-- <section>
+            <input type="radio" name="category" id="top-ten" value="top-ten">
+            <label for="home"><a href="">Top news</a> </label>
+            <input type="radio" name="category" id="art">
+            <label for="arts"><a href="#artnews">Arts </a> </label>
+        </section> -->
+
+        <!-- <section id="sorting">
+            <label for="sorting">Sorteren op:</label>
+            <select id="sorting" name="sortlist">
+                <option value="default">default</option>
+                <option value="name">subcategory</option>
+                <option value="country">country</option>
+            </select>
+        </section> -->
+        <section id="content">
+            <div class="containinfo">
+                <% data.forEach(item =>{ %>
+                <article>
+                    <a href="<%= item.id  %>"> <img id="img" src="<%= item.img  %> "> </a>
+                    <div class="contentwrap" id="content">
+
+                        <p><%= item.section %> <%= item.subsection %></p>
+                        <h2><a href="<%= item.id  %>"><%= item.dataTitle %></a>
+                        </h2>
+                        <!-- 
+                            <p>${item.info}</p>
+                            <a href="#article/${item.id}">read</a>
+                            <p>release date: <span>${item.date}</span></br>
+                            <span>${item.author}</span></p>
+                            -->
+                    </div>
+                </article>
+                <% }) %>
+            </div>
+        </section>

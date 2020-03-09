@@ -1,0 +1,17 @@
+<h1>Details</h1>
+<%- include('partials/header.ejs') %>
+<section class="detail-page">
+    <div class="detail">
+        <div class="detail-content">
+            <img src="<%= item.img  %> " alt="">
+            <p><%= item.section %> <%=  item.subsection %> </p>
+            <h2><%= item.dataTitle%>
+            </h2>
+            <p><%= item.info %></p>
+            <a href="<%=item.urlArticle %>" target="_blank">read</a>
+            <p>release date: <span><%= item.date %></span></br>
+                <span><%= item.author %> </span></p>
+        </div>
+    </div>
+
+</section>
