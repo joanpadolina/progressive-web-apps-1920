@@ -2,17 +2,15 @@ const express = require('express')
 const router = express.Router()
 const fetch = require('node-fetch')
 
-
-
 router
     .get('/', homePage)
+    .get('/account', accountPage)
     .get('/:id', detailPage)
 
 
 
-// render pages
-let dataResults
 
+// render homepage
 async function homePage(req, res) {
     if (dataResults) {
         res.render('index.ejs', {
@@ -26,9 +24,7 @@ async function homePage(req, res) {
     }
 }
 
-
-
-
+// render detail
 
 async function detailPage(req, res) {
     const data = await topNewsApi()
@@ -39,8 +35,15 @@ async function detailPage(req, res) {
     })
 }
 
+// render account
+
+function accountPage(req, res){
+    res.render('account.ejs')
+}
+
 
 // api fetch
+let dataResults
 const urlTopNews = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=`,
     key = 'BhVpjVR9HGDaQ7JxSAyeClycD87PCRrt'
 

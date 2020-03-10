@@ -1,7 +1,7 @@
-export default{
+module.exports = {
     input: 'src/app.js',
     output: {
-      file: '/public/bundle.js',
+      file: '/public/js/bundle.js',
       format: 'cjs'
     }
 }

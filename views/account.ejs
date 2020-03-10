@@ -1,0 +1,69 @@
+<%- include ('partials/head') %>
+<%- include ('partials/header') %>
+<h1>Account</h1>
+
+
+<form action="GET">
+        <input type="text" name="" id="name" placeholder="Username">
+        <input type="email" name="" id="email" class="email" placeholder="Emailadres">
+        <input type="password" name="" id="pass" placeholder="Password">
+        <input type="button" value="login" id="login">
+        <input type="button" value="register" id="register">
+</form>
+
+<script>
+    const loginBtn = document.querySelector('#login')
+    const emailInput = document.querySelector('#email')
+    const regis = document.querySelector('#register')
+    const input = document.querySelectorAll('input')
+    console.log(input)
+
+    loginBtn.addEventListener('click', () => {
+        emailInput.classList.add('input-remove')
+        if(emailInput.classList.contains('input-remove')){
+            emailInput.classList.remove('input-add')
+            setTimeout(() => {
+                emailInput.style.display="none"
+            },500)
+        }else{
+            console.log('nope')
+        }
+        // emailInput.style.display = "none"
+    })
+    regis.addEventListener('click', () => {
+        emailInput.classList.add('input-add')
+   
+        if(emailInput.classList.contains('input-add')){
+            emailInput.classList.remove('input-remove')
+            setTimeout(() => {
+                emailInput.style.display = "block"
+            },900)
+        }
+    })
+//     let box = document.getElementById('box'),
+//     btn = document.querySelector('button');
+
+// btn.addEventListener('click', function () {
+  
+//   if (box.classList.contains('input-remove')) {
+//     box.classList.remove('hidden');
+//     setTimeout(function () {
+//       box.classList.remove('visuallyhidden');
+//     }, 20);
+//   } else {
+//     box.classList.add('visuallyhidden');    
+//     box.addEventListener('transitionend', function(e) {
+//       box.classList.add('hidden');
+//     }, {
+//       capture: false,
+//       once: true,
+//       passive: false
+//     });
+//   }
+  
+// }, false);
+
+    console.log(emailInput)
+</script>
+
+<%- include ('partials/footer') %>
