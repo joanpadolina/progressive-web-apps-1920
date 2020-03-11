@@ -20,13 +20,14 @@
 
     loginBtn.addEventListener('click', () => {
         emailInput.classList.add('input-remove')
+
         if(emailInput.classList.contains('input-remove')){
             emailInput.classList.remove('input-add')
             setTimeout(() => {
                 emailInput.style.display="none"
             },500)
         }else{
-            console.log('nope')
+            emailInput.classList.add('input-remove')
         }
         // emailInput.style.display = "none"
     })

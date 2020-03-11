@@ -427,10 +427,9 @@ input#register {
 /* footer */
 
 footer {
-  width: 100vw;
-  display: block;
-  text-align: center;
-  position: absolute;
+  margin: 0 auto;
   padding: 1em;
   bottom: 0;
+  overflow: hidden;
+  text-align: center;
 }

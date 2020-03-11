@@ -1,5 +1,5 @@
 module.exports = {
-    input: 'src/app.js',
+    input: 'server.js',
     output: {
       file: '/public/js/bundle.js',
       format: 'cjs'
