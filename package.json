@@ -2,7 +2,7 @@
   "name": "progressive-web-app",
   "version": "1.0.0",
   "description": "This project is focusing on server side rendenring",
-  "main": "index.js",
+  "main": "functions/server.js",
   "directories": {
     "doc": "docs",
     "example": "examples"
