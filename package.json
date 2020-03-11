@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
     "build": "netlify-lambda build express",
     "node": "nodemon watch server.js -e html,js,css"
   },
@@ -28,6 +29,7 @@
   },
   "homepage": "https://github.com/joanpadolina/progressive-web-apps-1920#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "http": "0.0.0",
