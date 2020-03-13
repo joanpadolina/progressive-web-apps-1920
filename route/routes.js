@@ -3,6 +3,15 @@ const router = express.Router()
 const fetch = require('node-fetch')
 
 router
+    .post('/register', (req, res) => {
+       const username = req.body.username 
+       console.log(username)
+       res.end()
+    })
+    .get('/register', (req,res) => {
+        res.render('home.ejs')
+        res.send('trying to register')
+    })
     .get('/', homePage)
     .get('/account', accountPage)
     .get('/:id', detailPage)
@@ -37,7 +46,7 @@ async function detailPage(req, res) {
 
 // render account
 
-function accountPage(req, res){
+function accountPage(req, res) {
     res.render('account.ejs')
 }
 

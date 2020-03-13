@@ -2,9 +2,9 @@
     <div class="containinfo">
         <% data.forEach(item =>{ %>
         <article>
-            <a href="<%= item.id  %>"> <img id="img" src="<%= item.img  %> "> </a>
+            <a href="<%= item.id  %>"> <img width="600px" height="400px" id="img" src="<%= item.img  %> "> </a>
             <div class="contentwrap" id="content">
-               
+
                 <p class="subject"><%= item.section %> <%= item.subsection %></p>
                 <h2>
                     <a href="<%= item.id  %>"><%= item.dataTitle %></a>
@@ -16,7 +16,7 @@
                                     <p>release date: <span>${item.date}</span></br>
                                     <span>${item.author}</span></p>
                                     -->
-                                    <button>read later</button>
+                <button>read later</button>
             </div>
 
         </article>

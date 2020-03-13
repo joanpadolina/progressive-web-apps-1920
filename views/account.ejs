@@ -3,12 +3,13 @@
 <h1>Account</h1>
 
 
-<form action="GET">
-        <input type="text" name="" id="name" placeholder="Username">
-        <input type="email" name="" id="email" class="email" placeholder="Emailadres">
-        <input type="password" name="" id="pass" placeholder="Password">
+<form method="POST" action="/register" enctype="multipart/form-data" >
+        <input type="text" name="username" id="name" placeholder="Username">
+        <input type="email" name="email" id="email" class="email" placeholder="Emailadres">
+        <input type="password" name="pass" id="pass" placeholder="Password">
         <input type="button" value="login" id="login">
         <input type="button" value="register" id="register">
+        <button type="submit"> sub </button>
 </form>
 
 <script>
@@ -24,12 +25,9 @@
         if(emailInput.classList.contains('input-remove')){
             emailInput.classList.remove('input-add')
             setTimeout(() => {
-                emailInput.style.display="none"
-            },500)
-        }else{
-            emailInput.classList.add('input-remove')
+                emailInput.style.display= "none"
+            },900)
         }
-        // emailInput.style.display = "none"
     })
     regis.addEventListener('click', () => {
         emailInput.classList.add('input-add')
@@ -38,33 +36,21 @@
             emailInput.classList.remove('input-remove')
             setTimeout(() => {
                 emailInput.style.display = "block"
-            },900)
+            },600)
         }
     })
-//     let box = document.getElementById('box'),
-//     btn = document.querySelector('button');
 
-// btn.addEventListener('click', function () {
-  
-//   if (box.classList.contains('input-remove')) {
-//     box.classList.remove('hidden');
-//     setTimeout(function () {
-//       box.classList.remove('visuallyhidden');
-//     }, 20);
-//   } else {
-//     box.classList.add('visuallyhidden');    
-//     box.addEventListener('transitionend', function(e) {
-//       box.classList.add('hidden');
-//     }, {
-//       capture: false,
-//       once: true,
-//       passive: false
-//     });
-//   }
-  
-// }, false);
 
-    console.log(emailInput)
+    // locaStoarge
+
+    const inputForm = document.querySelectorAll('input')
+
+    for(item of inputForm){
+       if(item.type == "name" && item.value == ""){
+           console.log(item,'nopeee')
+       }
+    }
+
 </script>
 
 <%- include ('partials/footer') %>
