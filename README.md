@@ -1,5 +1,6 @@
 # Progressive web-apps WAFS
 <img src="./readme_assets/screen1.png" >
+
 ## Table of contents
 
 1. **[Introduction](#introduction)**
