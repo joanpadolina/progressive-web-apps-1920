@@ -2,26 +2,19 @@ const express = require('express')
 const router = express.Router()
 const fetch = require('node-fetch')
 
-router
-    .post('/register', (req, res) => {
-       const username = req.body.username 
-       console.log(username)
-       res.end()
-    })
-    .get('/register', (req,res) => {
-        res.render('home.ejs')
-        res.send('trying to register')
-    })
-    .get('/', homePage)
-    .get('/account', accountPage)
-    .get('/:id', detailPage)
+let dataResults
 
+router
+    .get('/', homePage)
+    .get('/:id', detailPage)
 
 
 
 // render homepage
 async function homePage(req, res) {
+   
     if (dataResults) {
+        console.log(dataResults)
         res.render('index.ejs', {
             data: dataResults
         })
@@ -44,27 +37,23 @@ async function detailPage(req, res) {
     })
 }
 
-// render account
-
-function accountPage(req, res) {
-    res.render('account.ejs')
-}
-
-
 // api fetch
-let dataResults
+
+
 const urlTopNews = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=`,
     key = 'BhVpjVR9HGDaQ7JxSAyeClycD87PCRrt'
 
 function cleanData(data) {
-    const newData = data.results
+    let newData = data.results
+    // console.log(newData)
     return newData.map(d => {
+        // console.log('test', d.multimedia.map(d => {return d.url[0]}))
         return {
             id: getArticleId(d.uri),
             dataTitle: d.title,
             info: d.abstract,
             urlArticle: d.url,
-            img: d.multimedia[0].url,
+            img: d.multimedia,
             date: new Date(d.published_date),
             section: d.section,
             subsection: d.subsection,

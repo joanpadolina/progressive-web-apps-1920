@@ -9,7 +9,15 @@
         <input type="password" name="pass" id="pass" placeholder="Password">
         <input type="button" value="login" id="login">
         <input type="button" value="register" id="register">
-        <button type="submit"> sub </button>
+        <button type="submit"> register </button>
+</form>
+
+<form method="POST" action="/login" enctype="multipart/form-data" >
+        <input type="text" name="username" id="name" placeholder="Username">
+        <input type="password" name="pass" id="pass" placeholder="Password">
+        <input type="button" value="login" id="login">
+        <input type="button" value="register" id="register">
+        <button type="submit"> log in </button>
 </form>
 
 <script>
@@ -39,17 +47,6 @@
             },600)
         }
     })
-
-
-    // locaStoarge
-
-    const inputForm = document.querySelectorAll('input')
-
-    for(item of inputForm){
-       if(item.type == "name" && item.value == ""){
-           console.log(item,'nopeee')
-       }
-    }
 
 </script>
 
