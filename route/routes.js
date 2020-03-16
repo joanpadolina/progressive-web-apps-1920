@@ -6,15 +6,15 @@ let dataResults
 
 router
     .get('/', homePage)
+    .get('/account', accountPage)
     .get('/:id', detailPage)
 
 
 
 // render homepage
 async function homePage(req, res) {
-   
+
     if (dataResults) {
-        console.log(dataResults)
         res.render('index.ejs', {
             data: dataResults
         })
@@ -24,6 +24,10 @@ async function homePage(req, res) {
             data
         })
     }
+}
+
+function accountPage(req, res) {
+    res.render('account.ejs')
 }
 
 // render detail
@@ -45,20 +49,26 @@ const urlTopNews = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=
 
 function cleanData(data) {
     let newData = data.results
-    // console.log(newData)
+    // console.log(newData[0].multimedia[0].url)
     return newData.map(d => {
-        // console.log('test', d.multimedia.map(d => {return d.url[0]}))
-        return {
+        // console.log(d)
+        let structuredData = {
             id: getArticleId(d.uri),
             dataTitle: d.title,
             info: d.abstract,
             urlArticle: d.url,
-            img: d.multimedia,
             date: new Date(d.published_date),
             section: d.section,
             subsection: d.subsection,
             author: d.byline
         }
+
+        //bas check if there is an url for the image tag
+        if(d.multimedia[0].url) structuredData.img = d.multimedia[0].url
+        else structuredData.img = 'https://www.groningen-seaports.com/wp-content/uploads/placeholder.jpg'
+
+        return structuredData
+
     })
 
 }
