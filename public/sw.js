@@ -19,7 +19,6 @@ console.log('sw.jss')
 self.addEventListener('install', (e) => {
     console.log('installing ')
     self.skipWaiting()
-
     // alles wordt gedaan en dan slapen, hierin the functionaliteiten aan meegeven
     //     // dingen hier opslaan
     //     // use case voor sw = caching 
@@ -31,12 +30,16 @@ self.addEventListener('install', (e) => {
 // activating the sw
 self.addEventListener('activate', event => {
     console.log('Activated service worker!')
-    
+
 })
 
 // fetching the sw
 self.addEventListener('fetch', event => {
-    console.log('fetching', event.request.url)
+    console('fetching')
+    // console.log('fetching', event.request.url)
+    // event.respondWith(
+    //     fetch(event.request)
+    // )
     // event.respondWith(caches.match(event.request))
     //     .then(cachedResponse => {
     //         if (cachedResponse) {

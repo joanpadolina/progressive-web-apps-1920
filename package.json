@@ -1,16 +1,21 @@
 {
   "name": "progressive-web-app",
   "version": "1.0.0",
-  "description": "This project is focusing on server side rendenring",
+  "description": "This project is focusing on server side rendering",
   "main": "functions/server.js",
   "directories": {
     "doc": "docs",
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart:dev": "npm run start",
+    "poststart": "npm run watch",
     "start": "node server.js",
-    "node": "nodemon watch server.js -e html,js,css"
+    "start:dev": "nodemon server.js -e html,js,css",
+    "build:css": "node build_scripts/build-css.js",
+    "build:js": "node build_script/build-js.js",
+    "watch": "chokidar 'src/css/*.css' --command 'npm run build:css' & chokidar 'src/js/*.js' --command 'npm run build:js' ",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -28,16 +33,21 @@
   },
   "homepage": "https://github.com/joanpadolina/progressive-web-apps-1920#readme",
   "dependencies": {
+    "chokidar-cli": "^2.1.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
     "http": "0.0.0",
-    "netlify-lambda": "^1.6.3",
     "node-fetch": "^2.6.0",
+    "node-sass": "^4.13.1",
     "router": "^1.3.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
-    "rollup": "^2.0.2"
+    "rollup": "^2.0.2",
+    "rollup-plugin-scss": "^2.1.0"
   }
 }

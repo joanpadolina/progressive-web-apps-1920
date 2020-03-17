@@ -1,0 +1,467 @@
+@import './animations.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+  margin: 0;
+  padding: 0;
+}
+
+/* radio button styling */
+
+main section:first-of-type input[type=radio] {
+  display: none;
+}
+
+main section:first-of-type {
+  width: 100vw;
+  position: sticky;
+  text-align: center;
+  top: 0;
+  background: white;
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+}
+
+main section:first-of-type button {
+  box-shadow: none;
+  border: none;
+  background: #3a7f99;
+  color: white;
+  font-weight: 500;
+  padding: 0.7em;
+  border-radius: 4em;
+  width: 12em;
+  float: right;
+}
+
+/* main section:first-of-type button::before {
+  content: url(https://upload.wikimedia.org/wikipedia/commons/8/86/A_perfect_SVG_heart.svg);
+  position: relative;
+  display: block;
+  width: 0em;
+  transform: scale(.1);
+} */
+
+main section:first-of-type label {
+  box-shadow: none;
+  background: #d2d2d2;
+  padding: .4em;
+  width: 5em;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  border-radius: 4.4em;
+  color: white;
+  font-size: 0.8em;
+  transition: 300ms ease-in-out;
+}
+
+input[type=radio]:checked+label {
+  background: rgb(230, 142, 84);
+}
+
+/* label:hover {
+  cursor: pointer;
+  background: darkgrey;
+} */
+
+/* section article {
+  height: 100vh;
+}
+
+section article:nth-child(1) {
+  background: red;
+}
+
+section article:nth-child(2) {
+  background: blue;
+}
+
+section article:nth-child(3) {
+  background: green;
+}
+
+section article:nth-child(4) {
+  background: purple;
+} */
+
+header {
+  height: 9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: black;
+}
+
+.inputvalue {
+  width: 100vw;
+  text-align: center;
+}
+
+main section:first-of-type input {
+  width: 40%;
+  border: none;
+  border-bottom: 1px solid;
+  padding: 1em;
+  text-align: center;
+  position: relative;
+  margin-bottom: 2em;
+}
+
+article {
+  width: 25em;
+  margin: 1em;
+  height: 33em;
+  flex: 1;
+  border-radius: 1em;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.12);
+}
+
+main section:nth-of-type(2) {
+  z-index: 2;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  top: -3em;
+  left: 17em;
+
+}
+
+/* 
+.contentwrap {
+  width: 13em;
+  background: rgb(250, 250, 250);
+  padding: 2em;
+  border-radius: .2em;
+  display: block;
+  position: absolute;
+  margin-top: -12em;
+  margin-left: 15.2em;
+  box-shadow: 0px 0px 14px -1px rgba(0, 0, 0, 0.53);
+  font-size: 0.8em;
+} */
+
+.contentwrap {
+  max-width: 100%;
+  display: block;
+  position: relative;
+  font-size: 0.8em;
+  height: 5.1em;
+  opacity: 1;
+  padding: 2em;
+  transition: 300ms ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/* 
+a:hover~#content {
+  opacity: 1;
+  display: block;
+  position: relative;
+  top: -9.4em;
+} */
+
+#content {
+  width: 100vw;
+}
+
+.containinfo {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+
+}
+
+.detail h2 {
+  color: rgb(34, 34, 59);
+}
+
+p.subject {
+  color: #dde2e9;
+  font-weight: 400;
+  font-size: 0.8em;
+  background: #647080;
+  width: 8em;
+  padding: 0.6em;
+  border-radius: .6em;
+  display: inline-block;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: 53%;
+  object-fit: cover;
+  border-radius: 1em 1em 0 0;
+}
+
+/* img:hover {
+  filter: grayscale(0)blur(.1em);
+
+} */
+
+.detail-page img {
+  filter: blur(0)grayscale(0);
+}
+
+/* .detail-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+} */
+.detail>a::before {
+  content: url(https://img.icons8.com/carbon-copy/100/000000/arrow.png);
+  display: block;
+  position: relative;
+  width: 1em;
+  transform: scale(-1, -1);
+  left: 5em;
+
+}
+
+.detail a {
+  color: white;
+}
+
+/* .detail {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0em;
+  z-index: 3;
+  background: rgb(239, 236, 236);
+} */
+
+.detail img {
+  padding: 1em;
+  position: relative;
+  height: 27em;
+  object-fit: cover;
+  border-radius: 4em;
+}
+
+.detail-content {
+  width: 30em;
+  align-self: center;
+  padding: 1em;
+  position: relative;
+}
+
+
+
+
+.detail-content a {
+  text-decoration: none;
+  color: white;
+  padding: .5em;
+  background: rgb(158, 39, 85);
+  display: block;
+  text-align: center;
+  border-radius: 1em;
+}
+
+@keyframes ldio-rpinwye8j0b {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  50% {
+    transform: rotate(180deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.ldio-rpinwye8j0b div {
+  position: absolute;
+  animation: ldio-rpinwye8j0b 1s linear infinite;
+  width: 160px;
+  height: 160px;
+  top: 20px;
+  left: 10em;
+  border-radius: 50%;
+  box-shadow: 0 4px 0 0 #e15b64;
+  transform-origin: 80px 82px;
+
+
+}
+
+.loadingio-eclipse {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+
+
+}
+
+.ldio-rpinwye8j0b {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+  /* see note above */
+}
+
+.ldio-rpinwye8j0b div {
+  box-sizing: content-box;
+
+}
+
+/* .detail {
+  display: block;
+  position: static;
+  background: #dedede;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  top: 0;
+  text-align: center;
+}
+ */
+
+/* detailpage */
+.detail {
+  display: flex;
+}
+
+.content-text {
+  width: 27em;
+}
+.content-text p:last-of-type{
+  color:rgb(160, 160, 160);
+}
+
+
+/*
+ account
+ */
+
+.accountpage,
+.movie-rev {
+  background: cadetblue;
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  position: absolute;
+  z-index: 4;
+  top: 0em;
+}
+
+.movie-rev img {
+  width: 20em;
+}
+
+/* navbar */
+
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+li {
+  color: grey;
+  margin-right: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+
+/* account form */
+
+form {
+  width: 20em;
+  margin: auto;
+  height: 14em;
+}
+
+fieldset {
+  align-items: center;
+  position: relative;
+}
+
+input {
+  display: block;
+  position: relative;
+  margin: 1.3em auto;
+  width: 80%;
+  padding: 1em;
+  border: 1px solid #ebebeb;
+  text-align: center;
+  transition: 300ms ease-in-out;
+}
+
+input[type=button] {
+  width: 10em;
+  float: left;
+  display: block;
+  position: relative;
+}
+
+input#register {
+  position: relative;
+  float: right;
+}
+
+/* footer */
+
+footer {
+  margin: 0 auto;
+  padding: 1em;
+  bottom: 0;
+  overflow: hidden;
+  text-align: center;
+}
+input:focus {
+    width: 100%;
+    border: 1px solid blanchedalmond;
+    box-shadow: none;
+    outline: none;
+    background: rgb(67, 85, 133);
+    color: white;
+}
+
+input:focus::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+.input-remove {
+    animation: remove-input 400ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes remove-input{
+    0%{
+        opacity: 1;
+        left: 0em;
+    }
+    100%{
+        opacity: 0;
+        left: 10em;
+    }
+}
+
+.input-add {
+    animation: remove-input 400ms ease-in-out reverse;
+    animation-fill-mode: backwards;
+}

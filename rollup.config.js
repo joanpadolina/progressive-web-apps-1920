@@ -1,7 +1,7 @@
-module.exports = {
-    input: 'server.js',
+export default {
+    input: 'src/css/*.css',
     output: {
-      file: '/public/js/bundle.js',
+      file: 'public/css/bundle-css.css',
       format: 'iife'
     }
 }

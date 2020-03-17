@@ -1,6 +1,6 @@
 import {
     testing
-} from './modules/testing'
+} from '../modules/testing'
 testing()
 console.log('hi')
 
