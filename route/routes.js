@@ -8,9 +8,13 @@ let dataResults
 router
     .get('/', homePage)
     .get('/account', accountPage)
-
-router
     .get('/:id', detailPage)
+
+
+router.get('/offline', (req, res) => {
+    console.log('Load Offline')
+    res.render('status/offline.ejs')
+})
 
 
 
@@ -37,8 +41,8 @@ function accountPage(req, res) {
 
 async function detailPage(req, res) {
     const data = await topNewsApi()
-    const id = req.params.id
-    const renderOnedata = data.find(data => data.id == id)
+    const id = await req.params.id
+    const renderOnedata = await data.find(data => data.id == id)
     res.render('detail.ejs', {
         item: renderOnedata
     })

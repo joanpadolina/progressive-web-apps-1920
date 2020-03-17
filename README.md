@@ -5,7 +5,9 @@
 
 1. **[Introduction](#introduction)**
 1. **[Installation](#installation)**
+1. **[Npm list](#npm-list)**
 1. **[Learning Goals](#learning-goals)**
+1. **[To-do-list](#to-do-list)**
 1. **[Features](#features)**
 1. **[Credits](#credits)**
 
@@ -38,6 +40,22 @@ npm run start
 In your browser type in the url:
 ``localhost:3000``
 
+## Dependencies
+To be able to work on this project read what is used to create this project.
+
+1. EJS // templating and code in plain html
+1. Node
+1. Express
+1. Node-fetch
+1. dotenv
+1. Gulp
+
+1. Manifest
+1. Service Worker
+1. Heroku
+
+
+
 ## Learning goals
 
 * **Know the difference between Client side and Server side rendering**
@@ -49,6 +67,16 @@ In your browser type in the url:
 <hr>
 
 * **Understand how the critical render path works and how to optimize it for a better runtime and/or perceived performance**
+
+## To-do-list
+* ~~WAFS app to server side rendering~~ :white_check_mark:
+* ~~Use EJS for templating~~ :white_check_mark:
+* ~~Render overview and detail page~~ :white_check_mark:
+* ~~Use tooling via npm or gulp~~ :white_check_mark:
+* Add a manifesto :white_check_mark: (but make it more detailed)
+* Add service worker 
+* Create a working registration *extra
+* ~~Deploy (on heroku)~~ :white_check_mark:
 
 
 ## Features
