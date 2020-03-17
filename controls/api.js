@@ -1,38 +1,36 @@
 const fetch = require('node-fetch')
 
-const urlTopNews = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=`,
-    key = 'BhVpjVR9HGDaQ7JxSAyeClycD87PCRrt'
+console.log('api fetch')
+const url = 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key='
+const key = 'BhVpjVR9HGDaQ7JxSAyeClycD87PCRrt'
+const apiUrl = url + key
 
-
-async function topNewsApi() {
-    const data = await fetch(urlTopNews + key)
-    const response = await data.json
-    const cleanedData = cleanData(response)
-    return cleanedData
+function topNewsApi() {
+    return fetch(apiUrl)
+        .then(async response => {
+            const data = await response.json()
+            return data
+        })
+        .then(item => cleanData(item))
 }
-
-async function renderTopNews() {
-    const data = await topNewsApi()
-    console.log(data)
-    res.render('home.ejs', {
-        data
-    })
-}
+topNewsApi()
 
 function cleanData(data) {
     const newData = data.results
     return newData.map(d => {
-        return {
+        let structuredData = {
             id: getArticleId(d.uri),
             dataTitle: d.title,
             info: d.abstract,
             urlArticle: d.url,
-            img: d.multimedia,
             date: new Date(d.published_date),
             section: d.section,
             subsection: d.subsection,
             author: d.byline
         }
+        if (d.multimedia[0].url) structuredData.img = d.multimedia[0].url
+        else structuredData.img = 'https://www.groningen-seaports.com/wp-content/uploads/placeholder.jpg'
+        return structuredData
     })
 
 }
@@ -44,4 +42,4 @@ function getArticleId(uri) {
     return res[3]
 }
 
-module.exports = renderTopNews
+module.exports = topNewsApi

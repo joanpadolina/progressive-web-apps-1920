@@ -1,0 +1,16 @@
+{
+    "name": "New York News API",
+    "short_name": "News",
+    "description": "fetching the latest news around the world",
+    "start_url": "/",
+    "background_color": "#fff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#000",
+    "icons": [{
+        "src": "https://www.groningen-seaports.com/wp-content/uploads/placeholder.jpg",
+        "type": "image/png",
+        "sizes": "163x163"
+    }]
+
+}

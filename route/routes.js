@@ -1,12 +1,15 @@
 const express = require('express')
 const router = express.Router()
 const fetch = require('node-fetch')
-
+const home = require('../controls/homepage')
+// home()
 let dataResults
 
 router
     .get('/', homePage)
     .get('/account', accountPage)
+
+router
     .get('/:id', detailPage)
 
 
@@ -64,7 +67,7 @@ function cleanData(data) {
         }
 
         //bas check if there is an url for the image tag
-        if(d.multimedia[0].url) structuredData.img = d.multimedia[0].url
+        if (d.multimedia[0].url) structuredData.img = d.multimedia[0].url
         else structuredData.img = 'https://www.groningen-seaports.com/wp-content/uploads/placeholder.jpg'
 
         return structuredData
