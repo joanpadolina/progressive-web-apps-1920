@@ -1,10 +1,9 @@
 const CORE_CACHE = 1
-const CORE_CACHE_NAME = `demo-core-v${CORE_CACHE}`
-
+const CORE_CACHE_NAME =`cache-core-v${CORE_CACHE}`
 const CORE_ASSETS = [
     '/',
-    '/offline',
-    'css/styles-concat.css'
+    'css/styles-concat.css',
+    '/offline'
 ]
 
 
@@ -16,34 +15,19 @@ console.log('sw.jss')
 
 self.addEventListener('install', (e) => {
     console.log('installing ')
-
-    // alles wordt gedaan en dan slapen, hierin the functionaliteiten aan meegeven
-    //     // dingen hier opslaan
-    //     // use case voor sw = caching 
     e.waitUntil(
         caches.open(CORE_CACHE_NAME)
-        .then(cache => cache.addAll(CORE_ASSETS))
+        .then(cache => {return cache.addAll(CORE_ASSETS)})
         .then(() => self.skipWaiting())
     )
 })
 // activating the sw
 self.addEventListener('activate', event => {
     console.log('Activated service worker!')
-    event.waitUntil(clients.claim())
+    // event.waitUntil(clients.claim())
 })
 
-// // fetching the sw
-// self.addEventListener('fetch', event =>{
-//     event.respondWith(
-//         caches.match(event.request).then(response => {
-//             if(response){
-//                 return response
-//             }
-//             return fetch(event.request)
-//         })
-//     )
-// })
-
+// fetching the sw
 
 
 

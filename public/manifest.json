@@ -8,9 +8,13 @@
     "scope": "/",
     "theme_color": "#000",
     "icons": [{
-        "src": "https://www.groningen-seaports.com/wp-content/uploads/placeholder.jpg",
+        "src":"img/newsicon.png",
+        "type":"image/png",
+        "sizes":"512x512"
+    },{
+        "src": "img/newsicon_65x65.png",
         "type": "image/png",
-        "sizes": "163x163"
+        "sizes": "65x65"
     }]
 
 }

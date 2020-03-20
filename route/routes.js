@@ -7,15 +7,12 @@ let dataResults
 
 router
     .get('/', homePage)
-    .get('/account', accountPage)
     .get('/:id', detailPage)
-
-
-router.get('/offline', (req, res) => {
-    console.log('Load Offline')
-    res.render('status/offline.ejs')
-})
-
+    .get('/account', accountPage)
+    .get('/offline', (req, res) => {
+        console.log('Load Offline')
+        res.render('status/offline.ejs')
+    })
 
 
 // render homepage

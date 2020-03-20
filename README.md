@@ -43,13 +43,12 @@ In your browser type in the url:
 ## Dependencies
 To be able to work on this project read what is used to create this project.
 
-1. EJS // templating and code in plain html
+1. EJS 
 1. Node
 1. Express
 1. Node-fetch
 1. dotenv
 1. Gulp
-
 1. Manifest
 1. Service Worker
 1. Heroku
@@ -60,9 +59,18 @@ To be able to work on this project read what is used to create this project.
 
 * **Know the difference between Client side and Server side rendering**
 
+Web application are fun and games until it starts depending on things where you've no control of. This can be the internet speed or devices and browser. 
+If most application are rendered through a server you won't exclude users from interacting with the main goal of the application.
+
 <hr>
 
 * **What is a Service Worker and how can I implement this in the application**
+
+A service worker is a vague concept I'm still struggling to get the hang of it. This because why would you want to cache somethings or why it won't overload the browser.
+The main struggle was to test this via browser. The data I tried to get either non existing or it does exist but on different browser.
+
+*It is vague as it sounds, need to update this content*
+
 
 <hr>
 
@@ -73,8 +81,8 @@ To be able to work on this project read what is used to create this project.
 * ~~Use EJS for templating~~ :white_check_mark:
 * ~~Render overview and detail page~~ :white_check_mark:
 * ~~Use tooling via npm or gulp~~ :white_check_mark:
-* Add a manifesto :white_check_mark: (but make it more detailed)
-* Add service worker 
+* ~~Add a manifesto~~ :white_check_mark:
+* ~~Add service worker~~
 * Create a working registration *extra
 * ~~Deploy (on heroku)~~ :white_check_mark:
 
