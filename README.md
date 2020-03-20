@@ -76,6 +76,12 @@ The main struggle was to test this via browser. The data I tried to get either n
 
 * **Understand how the critical render path works and how to optimize it for a better runtime and/or perceived performance**
 
+<hr>
+
+* **Building**
+
+On the other note I tried building CSS with gulp which was process I've never thought would take this long. It's was hard to understand or select folders in npm scripts. But in the end with help from Declans code and stackoverflow it works for now. The main thing I've learned are the script for prestart and poststart. I struggled a few times about why things weren't building in the logical order. But I found out that using prestart twice is not gonna help the process. And my mind went 'Isn't there something like poststart' and began typing this. Me being amaze this thing worked like wanted made me giggle and happy. And all the frustration about why things won't work dissapeared.
+
 ## To-do-list
 * ~~WAFS app to server side rendering~~ :white_check_mark:
 * ~~Use EJS for templating~~ :white_check_mark:
