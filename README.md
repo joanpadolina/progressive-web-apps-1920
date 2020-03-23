@@ -41,7 +41,7 @@ In your browser type in the url:
 ``localhost:3000``
 
 ## Dependencies
-To be able to work on this project read what is used to create this project.
+For a detailed view on the dependencies please read the following link about this in the [wiki](https://github.com/joanpadolina/progressive-web-apps-1920/wiki/Dependencies).
 
 1. EJS 
 1. Node
