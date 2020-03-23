@@ -40,7 +40,7 @@ npm run start
 In your browser type in the url:
 ``localhost:3000``
 
-## Dependencies
+## [Dependencies](https://github.com/joanpadolina/progressive-web-apps-1920/wiki/Dependencies)
 For a detailed view on the dependencies please read the following link about this in the [wiki](https://github.com/joanpadolina/progressive-web-apps-1920/wiki/Dependencies).
 
 1. EJS 
