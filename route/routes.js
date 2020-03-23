@@ -2,17 +2,19 @@ const express = require('express')
 const router = express.Router()
 const fetch = require('node-fetch')
 const home = require('../controls/homepage')
+const api = require('../controls/api')
+require('dotenv').config()
 // home()
 let dataResults
 
 router
     .get('/', homePage)
     .get('/account', accountPage)
+    .get('/detail/:id', detailPage)
     .get('/offline', (req, res) => {
         console.log('Load Offline')
         res.render('status/offline.ejs')
     })
-    .get('/:id', detailPage)
 
 
 // render homepage
@@ -23,7 +25,7 @@ async function homePage(req, res) {
             data: dataResults
         })
     } else {
-        const data = await topNewsApi()
+        const data = await api()
         res.render('index.ejs', {
             data
         })
@@ -48,14 +50,8 @@ function accountPage(req, res) {
 
 
 // api fetch
-
-
-const urlTopNews = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=`,
-    key = 'BhVpjVR9HGDaQ7JxSAyeClycD87PCRrt'
-
 function cleanData(data) {
     let newData = data.results
-    // console.log(newData[0].multimedia[0].url)
     return newData.map(d => {
         // console.log(d)
         let structuredData = {
@@ -80,7 +76,7 @@ function cleanData(data) {
 }
 
 function topNewsApi() {
-    return fetch(urlTopNews + key)
+    return fetch(process.env.NEWS_API)
         .then(async response => {
             let data = await response.json()
             return data
@@ -89,9 +85,6 @@ function topNewsApi() {
         .then(data => dataResults = data)
 
 }
-
-
-let test = 'nyt://article/96955278-e3f1-55ba-a3b0-c26208af9d42'
 
 function getArticleId(uri) {
     var str = uri

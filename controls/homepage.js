@@ -1,10 +1,19 @@
 const fetch = require('../controls/api')
 
-async function getAllNews(req, res){
-    const news = await fetch()
-  
+
+async function home(req, res) {
+
+    if (dataResults) {
+        res.render('index.ejs', {
+            data: dataResults
+        })
+    } else {
+        const data = await api()
+        res.render('index.ejs', {
+            data
+        })
+    }
 }
 
-getAllNews()
 
-module.exports = getAllNews
+module.exports = home

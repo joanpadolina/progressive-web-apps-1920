@@ -177,7 +177,7 @@ a:hover~#content {
   flex-wrap: wrap;
   width: 100%;
   text-align: center;
-
+  color:blue;
 }
 
 .detail h2 {
@@ -432,4 +432,10 @@ footer {
   bottom: 0;
   overflow: hidden;
   text-align: center;
+  font-size:.8em;
+  color:rgb(196, 196, 196);
+}
+
+p{
+  text-align:center;
 }

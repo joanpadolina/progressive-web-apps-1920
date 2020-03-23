@@ -1,12 +1,9 @@
 const fetch = require('node-fetch')
+require('dotenv').config()
 
-console.log('api fetch')
-const url = 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key='
-const key = 'BhVpjVR9HGDaQ7JxSAyeClycD87PCRrt'
-const apiUrl = url + key
 
 function topNewsApi() {
-    return fetch(apiUrl)
+    return fetch(process.env.NEWS_API)
         .then(async response => {
             const data = await response.json()
             return data
