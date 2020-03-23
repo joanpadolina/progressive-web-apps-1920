@@ -7,12 +7,12 @@ let dataResults
 
 router
     .get('/', homePage)
-    .get('/:id', detailPage)
     .get('/account', accountPage)
     .get('/offline', (req, res) => {
         console.log('Load Offline')
         res.render('status/offline.ejs')
     })
+    .get('/:id', detailPage)
 
 
 // render homepage
@@ -30,10 +30,6 @@ async function homePage(req, res) {
     }
 }
 
-function accountPage(req, res) {
-    res.render('account.ejs')
-}
-
 // render detail
 
 async function detailPage(req, res) {
@@ -44,6 +40,12 @@ async function detailPage(req, res) {
         item: renderOnedata
     })
 }
+
+
+function accountPage(req, res) {
+    res.render('account.ejs')
+}
+
 
 // api fetch
 
