@@ -15,7 +15,6 @@
     "start:dev": "nodemon server.js -e html,js,css",
     "build:css": "node gulp",
     "build:js": "node build_script/build-js.js",
-    "watch": "chokidar 'src/css/*.css' --command 'npm run build:css' & chokidar 'src/js/*.js' --command 'npm run build:js' ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

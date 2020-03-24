@@ -342,6 +342,7 @@ img {
 /* detailpage */
 .detail {
   display: flex;
+  justify-content: center;
 }
 
 .content-text {
@@ -438,4 +439,22 @@ footer {
 
 p{
   text-align:center;
+}
+
+
+/* loader */
+
+div#load{
+  width:100%;
+  height:100%;
+  position:fixed;
+  z-index:9999;
+  background:url("/img/loader3.gif") no-repeat center center white;
+}
+
+div#load p{
+  display: block;
+  position: relative;
+  top: 52%;
+  color: #cccccc;
 }
