@@ -38,13 +38,15 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.2",
     "http": "0.0.0",
     "node-fetch": "^2.6.0",
-    "router": "^1.3.4"
+    "router": "^1.3.4",
+    "spdy": "^4.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

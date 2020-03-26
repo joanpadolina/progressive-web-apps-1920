@@ -8,6 +8,7 @@
 1. **[Npm list](#npm-list)**
 1. **[Learning Goals](#learning-goals)**
 1. **[To-do-list](#to-do-list)**
+1. **[Performance](#performance)**
 1. **[Features](#features)**
 1. **[Credits](#credits)**
 
@@ -92,6 +93,50 @@ On the other note I tried building CSS with gulp which was process I've never th
 * Create a working registration *extra
 * ~~Deploy (on heroku)~~ :white_check_mark:
 
+## Performance
+
+At first sight the perfomance looked like this. Application is not as big as others so it was not shocking to see what the results where.
+
+<img src="/readme_assets/performance/chromedev.png">
+
+So this application had some issues with Accessebilty, Best Performance and the SEO. Let the digging begin..
+
+__For accessebilty I've change a few things__
+
+* Alt Tag in images
+Well didn't know this but it drastically change after adding alt-tags.
+* Contrast Text
+Some of the colors of the text didn't have the best contrast if you're looking at the background. With the devTools in chrome the perfect ammount of color was an easy fix.
+<img width="160em" src="/readme_assets/colorcertified.png">
+
++ Double Id
+It's commong knowledge that Id are unique so don't forget to stay in this rule otherwise Lighthouse is going to pick this up and your application is less accessible.
+
+
+__Best perfomance__
+
+I was not sure what the error was telling me. Lighthouse mentioned something abour requesting from Http instead of Http/2.
+After some reseach HTTP2 was basically faster than the previous one which will me the app faster, I guess? So I tried this out.
+
+What you'll need is package that handles HTTP2 and some `certifications` which are **server.key** and **server.crt**. Well I'm not a genius so googling bunch of thing what you'll do in the terminal.
+
+Followed this tutorial by [Azat Mardan](https://webapplog.com/http2-node/).
+
+But it did gave a lot of errors which had to be cheated out because Chrome didn't allow any suspicious link without SSL certification.
+
+__So..__
+
+After going back and forth with this, it ended up putting the certicaten in Google Chrome which makes it "trusted" and placing this :
+
+`/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/tmp/foo --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=https://localhost:3000`
+
+in the terminal which will open Google Canery and tadaá things worked.
+
+Ran the Lighthouse once more and:
+
+<img src="/readme_assets/performance/perfomance2.png">
+
+The weird part is maybe that there was no need to touch the SEO.
 
 ## Features
 
@@ -111,7 +156,8 @@ Search for categories from the news API.
 
 ## Credits
 
-[don't forget to credit website and people or stackoverflow]
+Mikael - Service worker
+Lien - Heroku deploy
 
 
 <!-- # Progressive Web Apps @cmda-minor-web · 2019-2020

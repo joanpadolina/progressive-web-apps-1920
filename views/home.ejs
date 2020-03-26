@@ -2,12 +2,12 @@
     <p>hold on fetching latest news..</p>
 </div>
 
-<section id="content">
+<section >
     <div class="containinfo">
         <% data.forEach(item =>{ %>
         <article>
-            <a href="/detail/<%= item.id  %>"> <img width="600px" height="400px" id="img" src="<%= item.img  %>"> </a>
-            <div class="contentwrap" id="content">
+            <a href="/detail/<%= item.id  %>"> <img width="600px" height="400px" src="<%= item.img  %>" alt="<%= item.dataTitle %>"> </a>
+            <div class="contentwrap content">
 
                 <p class="subject"><%= item.section %> <%= item.subsection %></p>
                 <h2>
@@ -20,7 +20,7 @@
                                     <p>release date: <span>${item.date}</span></br>
                                     <span>${item.author}</span></p>
                                     -->
-                <button>read later</button>
+                <!-- <button>read later</button> -->
             </div>
 
         </article>
