@@ -104,13 +104,17 @@ So this application had some issues with Accessebilty, Best Performance and the 
 __For accessebilty I've change a few things__
 
 * Alt Tag in images
+
 Well didn't know this but it drastically change after adding alt-tags.
+
 * Contrast Text
+
 Some of the colors of the text didn't have the best contrast if you're looking at the background. With the devTools in chrome the perfect ammount of color was an easy fix.
 <img width="160em" src="/readme_assets/colorcertified.png">
 
 + Double Id
-It's commong knowledge that Id are unique so don't forget to stay in this rule otherwise Lighthouse is going to pick this up and your application is less accessible.
+
+It's common knowledge that Id's are unique so don't forget to stay in this rule otherwise Lighthouse is going to pick this up and your application is less accessible.
 
 
 __Best perfomance__
