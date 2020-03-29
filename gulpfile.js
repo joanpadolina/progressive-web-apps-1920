@@ -8,6 +8,7 @@ gulp.task('build', function () {
 			'./src/css/styles.css'
 		])
 		.pipe(concat('styles-concat.css'))
+		.pipe(cssMini())
 		.pipe(gulp.dest('./public/css'))
 })
 gulp.task('watch', function () {

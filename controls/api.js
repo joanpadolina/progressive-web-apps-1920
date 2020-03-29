@@ -1,6 +1,7 @@
 const fetch = require('node-fetch')
 require('dotenv').config()
 
+let dataResults;
 
 function topNewsApi() {
     return fetch(process.env.NEWS_API)

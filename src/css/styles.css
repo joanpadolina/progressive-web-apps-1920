@@ -363,6 +363,9 @@ p{
   text-align:center;
 }
 
+#error{
+  text-align: center;
+}
 
 /* loader */
 
